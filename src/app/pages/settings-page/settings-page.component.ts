@@ -25,24 +25,25 @@ export class SettingsPageComponent {
   @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent
 
   // Это один из способов создания формы
-  // fb = inject(FormBuilder)
+  fb = inject(FormBuilder)
 
-  // form = this.fb.group({
-  //   firstName: ['', Validators.required],
-  //   lastName: ['', Validators.required],
-  //   username: [{value: '', disabled: true}, Validators.required],
-  //   description: [''],
-  //   stack: ['']
-  // })
+  form = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    username: [{value: '', disabled: true}, Validators.required],
+    description: [''],
+    stack: ['']
+  })
+
   // Другой способ создания формы
 
-  form = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      username: new FormControl({value: '', disabled: true}, Validators.required),
-      description: new FormControl(''),
-      stack: new FormControl('')
-  })
+  // form = new FormGroup({
+  //     firstName: new FormControl('', Validators.required),
+  //     lastName: new FormControl('', Validators.required),
+  //     username: new FormControl({value: '', disabled: true}, Validators.required),
+  //     description: new FormControl(''),
+  //     stack: new FormControl('')
+  // })
 
   constructor() {
     effect(() => {
